@@ -1,5 +1,6 @@
 QT += quick
 QT += bluetooth
+QT += svg
 
 CONFIG += c++17
 

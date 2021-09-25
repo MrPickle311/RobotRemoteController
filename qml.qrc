@@ -3,5 +3,16 @@
         <file>main.qml</file>
         <file>TurboRec.qml</file>
         <file>ConnectionPage.qml</file>
+        <file>icons/connect.svg</file>
+        <file>icons/connected.svg</file>
+        <file>ControlPage.qml</file>
+        <file>ApplicationPage.qml</file>
+        <file>ApplicationRoundButton.qml</file>
+        <file>SensorsPage.qml</file>
+        <file>ApplicationPageIndicator.qml</file>
+        <file>icons/up-arrow.svg</file>
+        <file>icons/rotate_right.svg</file>
+        <file>icons/rotate_left.svg</file>
+        <file>icons/down_arrow.svg</file>
     </qresource>
 </RCC>

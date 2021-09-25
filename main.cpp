@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <BluetoothIO.hpp>
 #include <QQmlEngine>
+#include <QSvgGenerator>
 
 int main(int argc, char *argv[])
 {
