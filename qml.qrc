@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>TurboRec.qml</file>
+        <file>ConnectionPage.qml</file>
+    </qresource>
+</RCC>
