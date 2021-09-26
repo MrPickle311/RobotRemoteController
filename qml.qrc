@@ -1,18 +1,29 @@
 <RCC>
     <qresource prefix="/">
-        <file>main.qml</file>
-        <file>TurboRec.qml</file>
-        <file>ConnectionPage.qml</file>
         <file>icons/connect.svg</file>
         <file>icons/connected.svg</file>
-        <file>ControlPage.qml</file>
-        <file>ApplicationPage.qml</file>
-        <file>ApplicationRoundButton.qml</file>
-        <file>SensorsPage.qml</file>
-        <file>ApplicationPageIndicator.qml</file>
         <file>icons/up-arrow.svg</file>
         <file>icons/rotate_right.svg</file>
         <file>icons/rotate_left.svg</file>
         <file>icons/down_arrow.svg</file>
+        <file>icons/sensor/uv.svg</file>
+        <file>icons/sensor/thermometer.svg</file>
+        <file>icons/sensor/sun.svg</file>
+        <file>icons/sensor/pressure.svg</file>
+        <file>icons/sensor/magnetic-field.svg</file>
+        <file>icons/sensor/humidity.svg</file>
+        <file>icons/sensor/co2.svg</file>
+        <file>icons/sensor/co.svg</file>
+        <file>script/sensor/TemperatureSensor.qml</file>
+        <file>script/TurboRec.qml</file>
+        <file>script/SensorsPage.qml</file>
+        <file>script/SensorColumn.qml</file>
+        <file>script/SensorBox.qml</file>
+        <file>script/main.qml</file>
+        <file>script/ControlPage.qml</file>
+        <file>script/ConnectionPage.qml</file>
+        <file>script/ApplicationRoundButton.qml</file>
+        <file>script/ApplicationPageIndicator.qml</file>
+        <file>script/ApplicationPage.qml</file>
     </qresource>
 </RCC>

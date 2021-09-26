@@ -11,7 +11,7 @@ ApplicationPage {
         width: 100
         height: 100
         anchors.top: parent.top
-        anchors.topMargin: applicationPage.width * 0.1
+        anchors.topMargin: applicationPage.height * 0.3
 
         anchors.horizontalCenter: parent.horizontalCenter
 
@@ -26,7 +26,7 @@ ApplicationPage {
         width: 100
         height: 100
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: applicationPage.height * 0.1
+        anchors.bottomMargin: applicationPage.height * 0.3
 
         anchors.horizontalCenter: parent.horizontalCenter
 
