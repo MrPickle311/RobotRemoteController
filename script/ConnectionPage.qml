@@ -3,24 +3,60 @@ import QtQuick 2.12
 import QtGraphicalEffects 1.0
 
 ApplicationPage {
+    id: applicationPage
 
-    property string not_connected : "Try connect"
-    property string connected : "Connected"
+    readonly property string connecting : "Connecting"
+    readonly property string not_found : "Device not found"
+    readonly property string connected : "Connected"
+    readonly property string not_connected : "Not connected"
 
-    function showConnected(icon){
+    readonly property string connectedIcon: "qrc:/icons/connected.svg"
+    readonly property string connectIcon: "qrc:/icons/connect.svg"
+
+    function showConnected(button){
         button.rescale(0.7)
-        icon.source = "qrc:/icons/connected.svg"
+        button.changeIcon(connectedIcon)
+    }
+
+    Text{
+        id: connectionStatusText
+
+        readonly property real dropScale: 0.8
+
+        anchors.horizontalCenter: parent.horizontalCenter
+        y : dropScale * applicationPage.height
+
+        text: not_connected
+        color: "white"
+
+        function setText(newText){
+            text = newText
+        }
+    }
+
+    Timer{
+        id: timer
+
+        interval: 600
+        repeat: false
+        onTriggered: {
+            connectionStatusText.setText(connected)
+            showConnected(connectionButton)
+        }
     }
 
     ApplicationRoundButton{
-        id: button
+        id: connectionButton
         width: 200
         height: 200
         anchors.centerIn: parent
 
-        onClicked: showConnected(icon)
+        onClicked: {
+            timer.start()
+            connectionStatusText.setText(connecting)
+        }
 
-        iconPath : "qrc:/icons/connect.svg"
+        iconPath : connectIcon
         iconColor: pageColor
     }
 }

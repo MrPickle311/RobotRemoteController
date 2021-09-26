@@ -4,11 +4,6 @@ import QtQuick 2.12
 RoundButton{
     id: button
 
-    function rescale(scale){
-        icon.width = 0.7 * icon.width
-        icon.height = 0.7 * icon.height
-    }
-
     property string iconPath: ""
     property color iconColor: "black"
 
@@ -16,4 +11,13 @@ RoundButton{
     icon.height: height
     icon.width: width
     icon.color: pageColor
+
+    function rescale(scale){
+        icon.width = 0.7 * icon.width
+        icon.height = 0.7 * icon.height
+    }
+
+    function changeIcon(new_url){
+        button.icon.source = new_url
+    }
 }

@@ -4,6 +4,6 @@ SensorBox{
     id: temperatureSensor
 
     sensorName: "Temperature"
-    sensorPostfix: "K"
-    sensorIconPath: "qrc:/icons/sensor/thermometer.svg"
+    sensorPostfix: "J/cm^2"
+    sensorIconPath: "qrc:/icons/sensor/uv.svg"
 }

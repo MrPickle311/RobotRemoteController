@@ -17,13 +17,20 @@
         <file>script/sensor/TemperatureSensor.qml</file>
         <file>script/TurboRec.qml</file>
         <file>script/SensorsPage.qml</file>
-        <file>script/SensorColumn.qml</file>
-        <file>script/SensorBox.qml</file>
         <file>script/main.qml</file>
         <file>script/ControlPage.qml</file>
         <file>script/ConnectionPage.qml</file>
         <file>script/ApplicationRoundButton.qml</file>
         <file>script/ApplicationPageIndicator.qml</file>
         <file>script/ApplicationPage.qml</file>
+        <file>script/sensor/SensorBox.qml</file>
+        <file>script/sensor/PressureSensor.qml</file>
+        <file>script/sensor/SensorColumn.qml</file>
+        <file>script/sensor/UVSensor.qml</file>
+        <file>script/sensor/SunSensor.qml</file>
+        <file>script/sensor/MagneticFieldSensor.qml</file>
+        <file>script/sensor/HumiditySensor.qml</file>
+        <file>script/sensor/COSensor.qml</file>
+        <file>script/sensor/CO2Sensor.qml</file>
     </qresource>
 </RCC>

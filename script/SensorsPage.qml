@@ -1,35 +1,55 @@
 import QtQuick.Controls 2.15
 import QtQuick 2.12
+import "sensor" as Sensor
 
 ApplicationPage {
     id: applicationPage
 
-        SensorColumn {
+        Sensor.SensorColumn {
             id: leftColumn
 
-            SensorBox{
+            anchors.left: parent.left
+
+            Sensor.TemperatureSensor{
                 id: temperatureSensor
-
-                sensorName: "Temperature"
-                sensorPostfix: "K"
-                sensorIconPath: "qrc:/icons/sensor/thermometer.svg"
-
                 Component.onCompleted: updateValue(5)
             }
 
-            SensorBox{
+            Sensor.PressureSensor{
                 id: pressureSensor
-
-                sensorName: "Pressure"
-                sensorPostfix: "hPa"
-                sensorIconPath: "qrc:/icons/sensor/pressure.svg"
-
                 Component.onCompleted: updateValue(5)
+            }
+
+            Sensor.HumiditySensor{
+                id: humiditySensor
+                Component.onCompleted: updateValue(5)
+            }
+
+            Sensor.MagneticFieldSensor{
+
             }
         }
 
-        SensorColumn {
+        Sensor.SensorColumn {
             id: rightColumn
+
+            anchors.right: parent.right
+
+            Sensor.COSensor{
+
+            }
+
+            Sensor.CO2Sensor{
+
+            }
+
+            Sensor.SunSensor{
+
+            }
+
+            Sensor.UVSensor{
+
+            }
 
         }
 

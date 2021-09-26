@@ -13,6 +13,7 @@ Rectangle {
     property string sensorPostfix: ""
     property string sensorValue: "0 " + sensorPostfix
     property string sensorIconPath: ""
+    property bool colorOverlayEnabled: true
 
     function updateValue(new_val){
         sensorValue = new_val + " " + sensorPostfix
@@ -37,8 +38,16 @@ Rectangle {
         }
 
         ColorOverlay{
-            anchors.fill:  buttonIcon
-            source: buttonIcon
+
+            Component.onCompleted: {
+                if(colorOverlayEnabled){
+                    source = buttonIcon
+                    anchors.fill =  buttonIcon
+                }
+            }
+
+            anchors.fill:  null
+            source: null
             color: "white"
             antialiasing: true
         }
