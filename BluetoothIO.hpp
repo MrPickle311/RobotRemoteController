@@ -15,7 +15,7 @@ private:
     QBluetoothDeviceDiscoveryAgent agent_;
     QList<QBluetoothDeviceInfo>    devices_;
     QStringList                    devices_model_;
-    QStringList m_devices_model_;
+    QStringList                    m_devices_model_;
 
     QBluetoothSocket socket_;
 

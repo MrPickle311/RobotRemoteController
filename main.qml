@@ -31,7 +31,7 @@ ApplicationWindow {
         listModel.append({name: device})
     }
 
-    /*
+
 
     Column {
         id: column
@@ -97,32 +97,32 @@ ApplicationWindow {
             text: qsTr("Disconnect")
         }
     }
-    */
 
-    SwipeView {
-        id: view
 
-        currentIndex: 1
-        anchors.fill: parent
+//    SwipeView {
+//        id: view
 
-        ConnectionPage {
-            id: firstPage
-        }
-        Item {
-            id: secondPage
-        }
-        Item {
-            id: thirdPage
-        }
-    }
+//        currentIndex: 1
+//        anchors.fill: parent
 
-    PageIndicator {
-        id: indicator
+//        ConnectionPage {
+//            id: firstPage
+//        }
+//        Item {
+//            id: secondPage
+//        }
+//        Item {
+//            id: thirdPage
+//        }
+//    }
 
-        count: view.count
-        currentIndex: view.currentIndex
+//    PageIndicator {
+//        id: indicator
 
-        anchors.bottom: view.bottom
-        anchors.horizontalCenter: parent.horizontalCenter
-    }
+//        count: view.count
+//        currentIndex: view.currentIndex
+
+//        anchors.bottom: view.bottom
+//        anchors.horizontalCenter: parent.horizontalCenter
+//    }
 }

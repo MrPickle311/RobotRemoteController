@@ -9,7 +9,15 @@ CONFIG += c++17
 
 SOURCES += \
         BluetoothIO.cpp \
-        main.cpp
+        src/bluetooth_controller/InputBluetoothController.cpp \
+        src/bluetooth_controller/OutputBluetoothController.cpp \
+        src/event/EventListener.cpp \
+        src/event/EventSender.cpp \
+        src/main.cpp \
+        src/connector/DeviceConnector.cpp \
+        src/page_controller/ConnectionPageController.cpp \
+        src/page_controller/ControlPageController.cpp \
+        src/page_controller/SensorPageController.cpp
 
 RESOURCES += qml.qrc
 
@@ -25,4 +33,12 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    BluetoothIO.hpp
+    BluetoothIO.hpp \
+    src/bluetooth_controller/InputBluetoothController.hpp \
+    src/bluetooth_controller/OutputBluetoothController.hpp \
+    src/connector/DeviceConnector.hpp \
+    src/event/EventListener.hpp \
+    src/event/EventSender.hpp \
+    src/page_controller/ConnectionPageController.hpp \
+    src/page_controller/ControlPageController.hpp \
+    src/page_controller/SensorPageController.hpp
