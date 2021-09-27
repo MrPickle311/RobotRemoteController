@@ -1,6 +1,9 @@
 #pragma once
 
 #include <QObject>
+#include <QBluetoothDeviceDiscoveryAgent>
+
+
 
 class DeviceConnector : public QObject
 {
