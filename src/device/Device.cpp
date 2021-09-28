@@ -1,8 +1,22 @@
 #include "Device.hpp"
 
-Device::Device(QObject *parent) : QObject(parent)
+void Device::handleError(QBluetoothSocket::SocketError error)
 {
-//    QObject::connect(&socket_ , QBluetoothSocket::readyRead
+   qDebug() << "Error : "  << error;
+}
+
+Device::Device(QObject *parent) :
+    QObject(parent),
+    socket_{QBluetoothServiceInfo::RfcommProtocol}
+{
+    QObject::connect(&socket_ , &QBluetoothSocket::connected 	, this , &Device::connected );
+    QObject::connect(&socket_ , &QBluetoothSocket::disconnected , this , &Device::disconnected );
+    QObject::connect(&socket_ , QOverload<QBluetoothSocket::SocketError>::of(&QBluetoothSocket::error),
+                     this , &Device::error );
+
+    QObject::connect(&socket_ , QOverload<QBluetoothSocket::SocketError>::of(&QBluetoothSocket::error),
+                     this , &Device::handleError );
+    QObject::connect(&socket_ , &QBluetoothSocket::stateChanged , this , &Device::stateChanged );
 }
 
 void Device::sendData(const QByteArray &data)
@@ -13,6 +27,6 @@ void Device::sendData(const QByteArray &data)
 void Device::tryConnect(const QBluetoothAddress &address)
 {
     socket_.connectToService(address,
-                             QBluetoothUuid{QString{"00001101-0000-1000-8000-00805F9B34FB"}} ,
+                             QBluetoothUuid{QString{deviceUUID}} ,
                              QIODevice::ReadWrite);
 }

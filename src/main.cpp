@@ -3,6 +3,8 @@
 #include <BluetoothIO.hpp>
 #include <QQmlEngine>
 #include "page_controller/ConnectionPageController.hpp"
+#include "device/Device.hpp"
+#include "connector/DeviceConnector.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -12,7 +14,10 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
 
-    ConnectionPageController page_ctrl;
+    std::shared_ptr<Device> dev_{std::make_shared<Device>()};
+    std::shared_ptr<DeviceConnector> connector{std::make_shared<DeviceConnector>(dev_)};
+
+    ConnectionPageController page_ctrl{connector};
 
     qmlRegisterSingletonInstance("Qt.program.singletons", 1 , 0 , "ControlPageController", &page_ctrl );
 

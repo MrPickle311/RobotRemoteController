@@ -2,23 +2,40 @@
 
 #include <QObject>
 #include <QBluetoothDeviceDiscoveryAgent>
+#include "../device/DeviceAccessor.hpp"
 
+class ConnectionErrorHandler
+{
+public :
+    void handleError(QBluetoothSocket::SocketError error);
+};
 
-
-class DeviceConnector : public QObject
+class DeviceConnector :
+        public QObject ,
+        public DeviceAccessor
 {
     Q_OBJECT
 private:
+    constexpr static auto device_id = "HC-06";
+private:
+    bool	device_found_;
     QBluetoothDeviceDiscoveryAgent agent_;
     QBluetoothDeviceInfo 		   device_info_;
 private:
-    bool tryAcquireConnection();
-    bool tryFindDevice();
+    void tryAcquireConnection();
+    void tryFindDevice();
+
+    void checkAtFinish();
+    void finishSearching();
 private slots:
-    void checkhandleDiscoveredDevice(const QBluetoothDeviceInfo& info);
+    void checkDiscoveredDevice(const QBluetoothDeviceInfo& info);
 public:
-    explicit DeviceConnector(QObject *parent = nullptr);
+    explicit DeviceConnector(DevicePtrCRef device, QObject *parent = nullptr);
 public slots:
-    bool tryConnect();
+    void tryConnect();
+signals:
+    void connected();
+    void deviceNotFound();
+    void disconnected();
 };
 

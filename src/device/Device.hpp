@@ -10,7 +10,10 @@ class Device : public QObject
 {
     Q_OBJECT
 private:
-    std::shared_ptr<ConnectionState> connection_state_;
+    constexpr static auto deviceUUID = "00001101-0000-1000-8000-00805F9B34FB";
+
+//    std::shared_ptr<ConnectionState> connection_state_;
+    void handleError(QBluetoothSocket::SocketError error);
     bool is_connected_;
     QBluetoothSocket socket_;
 public:
@@ -20,5 +23,9 @@ public slots:
     void tryConnect(const QBluetoothAddress& address);
 signals:
     void receiveData(QByteArray data);
+    void connected();
+    void disconnected();
+    void error(QBluetoothSocket::SocketError error);
+    void stateChanged(QBluetoothSocket::SocketState state);
 };
 
