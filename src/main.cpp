@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <BluetoothIO.hpp>
 #include <QQmlEngine>
+#include "page_controller/ConnectionPageController.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -11,9 +12,9 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
 
-    BluetoothIO io;
+    ConnectionPageController page_ctrl;
 
-    qmlRegisterSingletonInstance("Qt.example.singletons", 1, 0, "BluetoothIO", &io);
+    qmlRegisterSingletonInstance("Qt.program.singletons", 1 , 0 , "ControlPageController", &page_ctrl );
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));

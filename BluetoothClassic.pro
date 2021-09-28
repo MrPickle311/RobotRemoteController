@@ -11,6 +11,7 @@ SOURCES += \
         BluetoothIO.cpp \
         src/bluetooth_controller/InputBluetoothController.cpp \
         src/bluetooth_controller/OutputBluetoothController.cpp \
+        src/device/Device.cpp \
         src/event/EventListener.cpp \
         src/event/EventSender.cpp \
         src/main.cpp \
@@ -37,6 +38,7 @@ HEADERS += \
     src/bluetooth_controller/InputBluetoothController.hpp \
     src/bluetooth_controller/OutputBluetoothController.hpp \
     src/connector/DeviceConnector.hpp \
+    src/device/Device.hpp \
     src/event/EventListener.hpp \
     src/event/EventSender.hpp \
     src/page_controller/ConnectionPageController.hpp \
