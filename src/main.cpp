@@ -1,10 +1,12 @@
-#include <QGuiApplication>
+﻿#include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <BluetoothIO.hpp>
 #include <QQmlEngine>
 #include "page_controller/ConnectionPageController.hpp"
 #include "device/Device.hpp"
 #include "connector/DeviceConnector.hpp"
+#include "page_controller/ControlPageController.hpp"
+#include "bluetooth_controller/OutputBluetoothController.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -19,7 +21,13 @@ int main(int argc, char *argv[])
 
     ConnectionPageController page_ctrl{connector};
 
-    qmlRegisterSingletonInstance("Qt.program.singletons", 1 , 0 , "ControlPageController", &page_ctrl );
+    std::shared_ptr<OutputBluetoothController> out_ctrl{std::make_shared<OutputBluetoothController>(dev_)};
+
+    ControlPageController ctrl_page_ctrl{out_ctrl};
+
+    qmlRegisterSingletonInstance("Qt.program.singletons", 1 , 0 , "ConnectionPageController", &page_ctrl );
+
+    qmlRegisterSingletonInstance("Qt.program.singletons", 1 , 0 , "ControlPageController", &ctrl_page_ctrl);
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));

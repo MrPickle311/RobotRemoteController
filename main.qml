@@ -39,14 +39,14 @@ ApplicationWindow {
         height: 300
         text: "Not connected"
 
-        onClicked: ControlPageController.tryConnect()
+        onClicked: ConnectionPageController.tryConnect()
 
     }
 
     Component.onCompleted: {
-        ControlPageController.connected.connect(btn.showConnected)
-        ControlPageController.disconnected.connect(btn.showDisconnected)
-        ControlPageController.deviceNotFound.connect(btn.showNotFound)
+        ConnectionPageController.connected.connect(btn.showConnected)
+        ConnectionPageController.disconnected.connect(btn.showDisconnected)
+        ConnectionPageController.deviceNotFound.connect(btn.showNotFound)
     }
 
 /*

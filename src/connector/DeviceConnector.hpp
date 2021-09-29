@@ -10,6 +10,11 @@ public :
     void handleError(QBluetoothSocket::SocketError error);
 };
 
+class ConnectionState
+{
+
+};
+
 class DeviceConnector :
         public QObject ,
         public DeviceAccessor
@@ -24,8 +29,6 @@ private:
 private:
     void tryAcquireConnection();
     void tryFindDevice();
-
-    void checkAtFinish();
     void finishSearching();
 private slots:
     void checkDiscoveredDevice(const QBluetoothDeviceInfo& info);
