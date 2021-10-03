@@ -31,5 +31,6 @@
         <file>script/sensor/HumiditySensor.qml</file>
         <file>script/sensor/COSensor.qml</file>
         <file>script/sensor/CO2Sensor.qml</file>
+        <file>script/ApplicationTimedRoundButton.qml</file>
     </qresource>
 </RCC>
