@@ -4,7 +4,7 @@ import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Controls 2.15
 
-import Qt.example.singletons 1.0
+import Qt.program.singletons 1.0
 
 ApplicationWindow {
     id: win
