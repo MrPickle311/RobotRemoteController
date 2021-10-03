@@ -16,7 +16,7 @@ ApplicationWindow {
         win.width = Screen.desktopAvailableWidth
         win.height = Screen.desktopAvailableHeight
 
-        BluetoothIO.deviceFound.connect(addDevice)
+//        BluetoothIO.deviceFound.connect(addDevice)
     }
 
     property var devices: ["ok"]

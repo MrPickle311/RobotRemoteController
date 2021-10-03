@@ -15,7 +15,6 @@
         <file>icons/sensor/co2.svg</file>
         <file>icons/sensor/co.svg</file>
         <file>script/sensor/TemperatureSensor.qml</file>
-        <file>script/TurboRec.qml</file>
         <file>script/SensorsPage.qml</file>
         <file>script/main.qml</file>
         <file>script/ControlPage.qml</file>
