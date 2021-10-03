@@ -7,6 +7,7 @@
 #include "connector/DeviceConnector.hpp"
 #include "page_controller/ControlPageController.hpp"
 #include "bluetooth_controller/OutputBluetoothController.hpp"
+#include <QQuickStyle>
 
 int main(int argc, char *argv[])
 {
@@ -15,6 +16,8 @@ int main(int argc, char *argv[])
 #endif
 
     QGuiApplication app(argc, argv);
+
+    QQuickStyle::setStyle("Material");
 
     std::shared_ptr<Device> dev_{std::make_shared<Device>()};
     std::shared_ptr<DeviceConnector> connector{std::make_shared<DeviceConnector>(dev_)};

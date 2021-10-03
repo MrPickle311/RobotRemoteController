@@ -1,6 +1,6 @@
 QT += quick
 QT += bluetooth
-
+QT += quickcontrols2
 CONFIG += c++17
 
 # You can make your code fail to compile if it uses deprecated APIs.

@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>TurboRec.qml</file>
         <file>ConnectionPage.qml</file>
+        <file>SenderButton.qml</file>
     </qresource>
 </RCC>

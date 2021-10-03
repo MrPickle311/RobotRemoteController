@@ -5,14 +5,16 @@ import QtQuick.Window 2.15
 import QtQuick.Controls 2.15
 
 import Qt.program.singletons 1.0
-
+import QtQuick.Controls.Material 2.12
 ApplicationWindow {
+
+    Material.theme: Material.Dark
+
     id: win
     width: 1080
     height: 2340
     visible: true
     title: qsTr("Hello World")
-    color: "white"
     Button{
         id : btn
 
@@ -20,11 +22,9 @@ ApplicationWindow {
             text = "Connected"
         }
 
-
         function showDisconnected(){
             text = "Not connected"
         }
-
 
         function showNotFound(){
             text = "Not found"
@@ -34,13 +34,71 @@ ApplicationWindow {
             visible: true
         }
 
-        anchors.centerIn: parent
+        anchors.horizontalCenter: parent
+        y: 0
         width: 300
         height: 300
         text: "Not connected"
 
         onClicked: ConnectionPageController.tryConnect()
 
+    }
+
+    SenderButton {
+        id: button
+        width: 134
+        height: 64
+        text: qsTr("Up")
+
+       anchors.top: btn.bottom
+       Component.onCompleted: {
+            actionToPerform =  function(){
+                ControlPageController.driveStraight()
+            }
+       }
+    }
+
+    SenderButton {
+        id: button1
+        width: 198
+        height: 104
+        text: qsTr("Down")
+
+        anchors.top: button.bottom
+
+       Component.onCompleted: {
+            actionToPerform =  function(){
+                ControlPageController.driveBackwards()
+            }
+       }
+    }
+
+    SenderButton {
+        id: button2
+        width: 190
+        height: 67
+        text: qsTr("Left")
+
+        anchors.top: button1.bottom
+
+       Component.onCompleted: {
+            actionToPerform =  function(){
+                ControlPageController.turnLeft()
+            }
+       }
+    }
+
+    SenderButton {
+        id: button3
+        text: qsTr("Right")
+
+        anchors.top: button2.bottom
+
+       Component.onCompleted: {
+            actionToPerform =  function(){
+                ControlPageController.turnRight()
+            }
+       }
     }
 
     Component.onCompleted: {
