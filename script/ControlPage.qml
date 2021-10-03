@@ -5,7 +5,7 @@ import QtGraphicalEffects 1.0
 ApplicationPage {
     id: applicationPage
 
-    ApplicationRoundButton{
+    ApplicationTimedRoundButton{
         id: upButton
 
         width: 100
@@ -20,7 +20,7 @@ ApplicationPage {
         iconColor: pageColor
     }
 
-    ApplicationRoundButton{
+    ApplicationTimedRoundButton{
         id: downButton
 
         width: 100
@@ -34,7 +34,7 @@ ApplicationPage {
         iconColor: pageColor
     }
 
-    ApplicationRoundButton{
+    ApplicationTimedRoundButton{
         id: leftButton
 
         width: 100
@@ -48,7 +48,7 @@ ApplicationPage {
         iconColor: pageColor
     }
 
-    ApplicationRoundButton{
+    ApplicationTimedRoundButton{
         id: rightButton
 
         width: 100
