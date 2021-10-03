@@ -17,6 +17,7 @@ ApplicationPage {
 
         anchors.horizontalCenter: parent.horizontalCenter
 
+        Component.onCompleted: setAction(ControlPageController.driveStraight)
 
         iconPath : "qrc:/icons/up-arrow.svg"
         iconColor: pageColor
@@ -32,6 +33,7 @@ ApplicationPage {
 
         anchors.horizontalCenter: parent.horizontalCenter
 
+        Component.onCompleted: setAction(ControlPageController.driveBackwards)
         iconPath : "qrc:/icons/down_arrow.svg"
         iconColor: pageColor
     }
@@ -45,6 +47,7 @@ ApplicationPage {
         anchors.right: parent.right
         anchors.rightMargin: applicationPage.width * 0.1
 
+        Component.onCompleted: setAction(ControlPageController.turnLeft)
 
         iconPath : "qrc:/icons/rotate_left.svg"
         iconColor: pageColor
@@ -59,6 +62,7 @@ ApplicationPage {
         anchors.left: parent.left
         anchors.leftMargin: applicationPage.width * 0.1
 
+        Component.onCompleted: setAction(ControlPageController.turnRight)
 
         iconPath : "qrc:/icons/rotate_right.svg"
         iconColor: pageColor
